@@ -9,13 +9,15 @@ import axios from 'axios';
  */
 
 function request(opts) {
-  return axios({
+  console.log('axios',axios);
+  console.log('axios post',axios.post);
+  axios({
       method: 'post',
       url: opts.uri,
       data: opts.body
   })
 
-  axios.post(opts.uri, opts.body)
+  return axios.post(opts.uri, opts.body)
   //ajax({
   //  url: opts.uri,
   //  body: opts.body,
