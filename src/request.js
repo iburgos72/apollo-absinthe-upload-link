@@ -12,7 +12,7 @@ function request(opts) {
   return axios({
       method: 'post',
       url: opts.uri,
-      data: opts.body
+      data: opts.body,
       headers: opts.headers
   })
 
