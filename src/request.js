@@ -1,5 +1,6 @@
-import { ajax } from 'rxjs/ajax'
-import { map } from 'rxjs/operators'
+import { ajax } from 'rxjs/ajax';
+import { map } from 'rxjs/operators';
+import { axios } from 'axios';
 
 /**
  * Request function
@@ -9,12 +10,23 @@ import { map } from 'rxjs/operators'
 
 function request(opts) {
   console.log(opts);
-  ajax({
-    url: opts.uri,
-    body: opts.body,
-    method: 'POST',
-    headers: opts.headers,
-  }).pipe(map(({ response }) => response))
+  axios({
+      method: 'post',
+      url: opts.uri,
+      data: opts.body
+  })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  //ajax({
+  //  url: opts.uri,
+  //  body: opts.body,
+  //  method: 'POST',
+  //  headers: opts.headers,
+  //}).pipe(map(({ response }) => response))
 }
 
 //const request = opts =>
