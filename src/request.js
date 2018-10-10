@@ -1,6 +1,6 @@
 import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
-import { axios } from 'axios';
+import axios from 'axios';
 
 /**
  * Request function
