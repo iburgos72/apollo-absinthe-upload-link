@@ -12,10 +12,22 @@ function request(opts) {
   console.log(axios);
   axios.post(opts.uri, opts.body)
     .then(function(response) {
-      console.log(response);
+      console.log("post then",response);
     })
     .catch(function(error) {
-      console.log(error);
+      console.log("post error",error);
+    })
+
+  axios({
+      method: 'post',
+      url: opts.uri,
+      data: opts.body
+  })
+    .then(function(response) {
+      console.log("axios then",response);
+    })
+    .catch(function(error) {
+      console.log("axios error",error);
     })
   //ajax({
   //  url: opts.uri,
