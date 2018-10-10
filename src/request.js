@@ -9,6 +9,7 @@ import { axios } from 'axios';
  */
 
 function request(opts) {
+  console.log(axios);
   axios.post(opts.uri, opts.body)
     .then(function(response) {
       console.log(response);
